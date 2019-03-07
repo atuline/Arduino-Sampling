@@ -1,3 +1,11 @@
+# Arduino Sampling
+
+
+**By:** Andrew Tuline
+
+**Email:** atuline@gmail.com
+
+**Date:** March, 2019
 
 This repository contains several examples of A/D conversion of audio input using:
 
@@ -30,3 +38,14 @@ https://www.instructables.com/id/Girino-Fast-Arduino-Oscilloscope/
 https://www.gammon.com.au/adc
 http://www.robotplatform.com/knowledge/ADC/adc_tutorial.html
 https://www.newbiehack.com/MicrocontrollersADC10Bits.aspx
+
+
+-----------------------------------------------------------------------------------
+
+This repository:						https://github.com/atuline/Arduino-Sampling
+
+My Youtube channel is at:               https://www.youtube.com/user/atuline/videos
+My Github account is at:                https://github.com/atuline
+My Gists are at:                        https://gist.github.com/atuline
+My Pastebins are at:                    https://pastebin.com/u/atuline
+FastLED support forum:					https://www.reddit.com/r/fastled
