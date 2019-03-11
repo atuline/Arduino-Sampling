@@ -19,11 +19,9 @@ void setup() {
   ADMUX |= (0 << REFS0);  // set reference voltage, which is same as analog reference(external)
   ADMUX |= (1 << ADLAR);  // left align ADC value to 8 bits from ADCH register
 
-  // sampling rate is [ADC clock] / [prescaler] / [conversion clock cycles]
-  // for Arduino Uno ADC clock is 16 MHz and a conversion takes 13 clock cycles
-  ADCSRA |= (1 << ADPS2) | (1 << ADPS0);    // 32 prescaler for 38.5 KHz
-  // ADCSRA |= (1 << ADPS2);                     // 16 prescaler for 76.9 KHz
-  //ADCSRA |= (1 << ADPS1) | (1 << ADPS0);    // 8 prescaler for 153.8 KHz
+//  ADCSRA |= bit (ADPS0) | bit (ADPS2);                //  32 scaling or 38.5 KHz sampling
+  ADCSRA |= bit (ADPS1) | bit (ADPS2);                //  Set ADC clock with 64 prescaler where 16mHz/64=250kHz and 250khz/13 instruction cycles = 19.2khz sampling.
+//  ADCSRA |= bit (ADPS0) | bit (ADPS1) | bit (ADPS2);    // 128 prescaler with 9.6 KHz sampling
 
   ADCSRA |= (1 << ADATE); // enable auto trigger
   ADCSRA |= (1 << ADIE);  // enable interrupts when measurement complete

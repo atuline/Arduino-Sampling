@@ -48,8 +48,11 @@ void setup() {
                                           // Set that to 1 if using 5V microphone or 3.3V Arduino.
 //  ADMUX |= (1 << ADLAR);                  // Left justify to get 8 bits of data.
   ADMUX |= (0 << ADLAR);                  // Right justify to get 10 bits of data.  
-//  ADCSRA |= (1 << ADPS2) | (1 << ADPS1);  // Set ADC clock with 64 prescaler where 16mHz/64=250kHz and 250khz/13 instruction cycles = 19.2khz sampling.
- ADCSRA |= (1 << ADPS2) | (1 << ADPS0);   // Set ADC clock with 32 prescaler for 38.5 KHz sampling.
+  
+//  ADCSRA |= bit (ADPS0) | bit (ADPS2);                //  32 scaling or 38.5 KHz sampling
+  ADCSRA |= bit (ADPS1) | bit (ADPS2);                //  Set ADC clock with 64 prescaler where 16mHz/64=250kHz and 250khz/13 instruction cycles = 19.2khz sampling.
+//  ADCSRA |= bit (ADPS0) | bit (ADPS1) | bit (ADPS2);    // 128 prescaler with 9.6 KHz sampling
+  
   ADCSRA |= (1 << ADATE);                 // Enable auto trigger.
   ADCSRA |= (1 << ADIE);                  // Enable interrupts when measurement complete (if using ISR method). Sorry, we're using polling here.
   ADCSRA |= (1 << ADEN);                  // Enable ADC.
