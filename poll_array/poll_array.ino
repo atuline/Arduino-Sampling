@@ -26,7 +26,7 @@ uint8_t   sample = 10;                                        // Dampened 'sampl
 
 
 void setup() {
-  Serial.begin(57600); // use the serial port
+  Serial.begin(115200); // use the serial port
 
 // Setup the ADC for polled 10 bit sampling on analog pin 5 at 38.5KHz.
   cli();                                  // Disable interrupts.

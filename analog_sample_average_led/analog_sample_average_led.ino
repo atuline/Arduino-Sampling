@@ -49,13 +49,13 @@ uint8_t   sample = 10;                                        // Dampened 'sampl
 void setup() {
 
   analogReference(EXTERNAL);                                  //  Audio samples are 'cleaner' at 3.3V. COMMENT OUT THIS LINE FOR 3.3V ARDUINOS (FLORA, ETC.) or for 5V microphones.
-  Serial.begin(57600);                                        // Initialize serial port for debugging.
+  Serial.begin(115200);                                        // Initialize serial port for debugging.
 
 //  LEDS.addLeds<LED_TYPE, LED_DT, COLOR_ORDER>(leds, NUM_LEDS);        // Use this for WS2812B.
   LEDS.addLeds<LED_TYPE, LED_DT, LED_CK, COLOR_ORDER>(leds, NUM_LEDS);  // Use this for WS2801 or APA102.
 
   FastLED.setBrightness(max_bright);                          // Setting our global maxiumum brightness. We can change this on the fly if we want.
-  set_max_power_in_volts_and_milliamps(5, 500);               // Power managed display so that we don't draw too much current.
+  FastLED.setMaxPowerInVoltsAndMilliamps(5, 500);               // Power managed display so that we don't draw too much current.
 
 } // setup()
 

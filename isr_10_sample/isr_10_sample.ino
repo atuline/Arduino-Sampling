@@ -9,7 +9,7 @@ volatile int16_t sample;
 
 void setup() {
   
-  Serial.begin(57600);
+  Serial.begin(115200);
 
 // Setup the ADC for ISR 10 bit sampling on analog pin 5 at 19.2kHz.
   cli();                                  // Disable interrupts.

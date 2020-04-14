@@ -7,10 +7,15 @@
 
 **Date:** March, 2019
 
+**Updated:** April, 2020
+
 This repository contains several examples of A/D conversion of audio input using:
 
 - Arduino Nano
 - Sparkfun ADMP401 MEMS microphone
+
+
+In April, 2020, I added a .pdf file containing the results of my testing of various microphones.
 
 
 Various routines also utilize the following libraries:
