@@ -15,7 +15,7 @@
  */
 
 
-#define MIC_PIN    5                                          // Analog port for microphone
+#define MIC_PIN    A5                                          // Analog port for microphone
   
 // Global variable(s) used by other routines.
 
@@ -42,13 +42,13 @@ void loop() {
 void analog_sample() {
 
 // Local definitions
-#define DC_OFFSET  509                                        // DC offset in mic signal.
+#define DC_OFFSET  397                                        // DC offset in mic signal.
   
 // Temporary local variables
   int micIn = 0;
   
   micIn = analogRead(MIC_PIN) - DC_OFFSET;                    // Sample the microphone. Range will result in -512 to 512.
-//  Serial.println(micIn);
+  Serial.println(micIn);
 
 } // analog_sample()
 
@@ -64,7 +64,7 @@ void showfps() {                                              // Show rames per 
   
   loops++;
   if(currentMillis - lastMillis >1000) {
-    Serial.println(loops);                                    // Print it once a second.
+//    Serial.println(loops);                                    // Print it once a second.
     lastMillis = currentMillis;
     loops = 0;
   }
